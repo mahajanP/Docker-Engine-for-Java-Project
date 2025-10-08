@@ -1,0 +1,28 @@
+For postgresql 
+ > After create postgrase image do the follwing things 
+build contaienr
+docker image build -t postgresqldb:16 .
+run containre
+docker container run -d --name postgres -e POSTGRES_USER=javaimage -e POSTGRES_DB=fullstackjava -e POSTGRES_PASSWORD=test1234 postgresqldb:16
+
+for postgrase testing 
+ docker container exec -it  postgres  sh
+psql -h localhost  -U javaimage -d fullstackjava
+\dt+;
+\l;
+
+create Springboot 
+befour run this chnage ip address 
+
+/root/Docker_engine_for_java_project/java-fullstack-project/springboot/src/main/resources - add postgrase contaier ip address
+docker image build -t springbootapp:18-alpine . --no-cache 
+docker container run -d --name springboot springbootapp:18-alpine
+
+for react 
+
+React 
+befour start container add host ip address in menion file react\src\main.jsx
+docker image build -t reactapp:18-alpine . --no-cache
+Launch react application 
+docker container run -d --name reactapp -p 8090:80 reactapp:18-alpine
+ 
