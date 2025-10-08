@@ -1,0 +1,3 @@
+FROM postgres:16-alpine
+LABEL maintainer="prakash prakashmah123@gmail.com"
+COPY /root/Docker_engine_for_java_project/java-fullstack-project/postgresql/scripts/  /docker-entrypoint-initdb.d
